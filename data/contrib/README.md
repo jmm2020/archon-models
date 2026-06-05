@@ -6,6 +6,9 @@ files in this directory** (one example per line), then open a pull request.
 - Format & rules: [`../../docs/DATA_SCHEMA.md`](../../docs/DATA_SCHEMA.md)
 - How to contribute: [`../../CONTRIBUTING.md`](../../CONTRIBUTING.md)
 - Working template: [`EXAMPLE.jsonl`](EXAMPLE.jsonl)
+- **Gold reference set** (study this — it's the bar): [`_reference/archon-router-gold.jsonl`](_reference/archon-router-gold.jsonl)
+  — 39 curated examples across buckets B/C/D, all using real workflow labels.
+  Copy its style, not its exact sentences.
 
 Suggested layout — one folder per contributor keeps PRs clean:
 

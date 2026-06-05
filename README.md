@@ -4,7 +4,7 @@ A small, focused **workflow router** for [Archon](https://github.com/coleam00/Ar
 
 Given a natural-language user request, the router picks the single best Archon **workflow** to run (or abstains and escalates when nothing fits). It is a **LoRA adapter** fine-tuned on `unsloth/gemma-4-12b`, trained locally with Unsloth + TRL.
 
-> **Status: early v1.** The training pipeline runs end-to-end on a single GPU and the adapter trains cleanly — but v1 learns from a small set of canonical examples, so treat it as a working starting point, not a finished router. The data section below explains why, and what would make it genuinely good.
+> **Status: v0.1 → working toward v0.1.1.** The training pipeline runs end-to-end on a single GPU and the adapter trains cleanly — but v0.1 learns from a small set of canonical examples (each workflow's own description), so it mostly measures memorization, not routing skill. **v0.1.1 is about fixing that with real, diverse, human-written data — and that's where you come in.** See [**How you can help**](#how-you-can-help-build-v011) below.
 
 ---
 
@@ -27,6 +27,44 @@ model/
 examples/
   infer_router.py                # load base + adapter, route a request
 ```
+
+## How you can help build v0.1.1
+
+**The model is only as good as the requests it learns from — and right now it's
+only seen workflow descriptions, not how real people actually ask.** That's the
+single biggest gap, and it's one anyone can help close without a GPU or any ML
+work. If you've used Archon (or anything like it), you already know how you'd
+phrase these requests. That's exactly the data we need.
+
+**The goal of v0.1.1:** replace the canonical-anchor memorization with a corpus
+of realistic, diverse, correctly-labeled requests so the router generalizes to
+how people actually talk.
+
+**What to contribute** (pick whichever you can; all are valuable):
+
+| Priority | Bucket | What we need | Example |
+|---|---|---|---|
+| 🥇 Highest | **B — realistic paraphrases** | Natural ways to ask for a workflow — *not* echoing its description. ~15–30 varied phrasings per workflow. | "the login page bounces users back to sign-in, can you fix issue #412" → `archon-fix-github-issue` |
+| 🥈 High | **C — boundary pairs** | Two near-identical requests that route to *different* workflows. These teach the hardest calls. | "just fix #500" → `archon-fix-github-issue` vs. "full fix+review pipeline on #500" → `archon-issue-review-full` |
+| 🥉 High | **D — honest abstentions** | Plausible coding-adjacent requests that *no* workflow fits, so the model should escalate. | "should we rewrite the backend in Rust?" → `{escalate: true}` |
+| Bonus | **A — real run history** | Actual `request → workflow that ran` pairs from your own usage (anonymized). | (from your Archon logs) |
+
+**Two ways in:**
+
+1. **Add data** — drop a JSONL file in [`data/contrib/`](data/contrib/), validate,
+   open a PR. Start from the [**gold reference set**](data/contrib/_reference/archon-router-gold.jsonl)
+   (39 curated examples) — copy its *style*, not its sentences.
+2. **Just have an idea?** Open a
+   [**Data idea** issue](../../issues/new?template=data-idea.md) — a workflow the
+   router gets wrong, a confusable pair you've hit, a phrasing it should know. No
+   code required.
+
+Full walkthrough, do's and don'ts, and the schema:
+**[CONTRIBUTING.md](CONTRIBUTING.md)** · **[docs/DATA_SCHEMA.md](docs/DATA_SCHEMA.md)**
+
+The 30 routable workflow labels live in `.archon/workflows/*.yaml` and are listed
+in `data/build/build_stats.json`. When in doubt about a label, use bucket **D**
+(escalate) or open an idea issue rather than guessing.
 
 ## The routing task
 
