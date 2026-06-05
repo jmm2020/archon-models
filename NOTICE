@@ -1,0 +1,21 @@
+archon-models — NOTICE
+
+This repository contains a LoRA adapter fine-tuned from a base model:
+
+  Base model: unsloth/gemma-4-12b  (a build of Google's Gemma)
+
+The LoRA adapter weights in `model/archon-router-gemma4-lora/` are a
+derivative of Gemma and are therefore subject to the Google Gemma Terms
+of Use, in addition to the MIT license that covers the original code,
+scripts, and datasets authored in this repository.
+
+  Gemma Terms of Use:        https://ai.google.dev/gemma/terms
+  Gemma Prohibited Use:      https://ai.google.dev/gemma/prohibited_use_policy
+
+To run inference you must obtain the Gemma base model separately and
+accept its license. The adapter alone is non-functional without the base.
+
+The MIT license in LICENSE applies to:
+  - scripts/   (extraction, dataset build, training)
+  - data/      (routing datasets derived from Archon workflow definitions)
+  - README, examples, and other original content.

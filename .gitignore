@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Training noise (not shared)
+runs/
+checkpoint-*/
+unsloth_compiled_cache/
+*.log
+wandb/
+
+# OS
+.DS_Store

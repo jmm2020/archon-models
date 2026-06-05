@@ -1,0 +1,14 @@
+{
+  "buckets": {
+    "positives": 175,
+    "synth": 0,
+    "abstention": 25,
+    "retention": 0
+  },
+  "total": 200,
+  "train": 174,
+  "eval": 26,
+  "routable_workflows": 30,
+  "seed": 42,
+  "eval_frac": 0.15
+}
