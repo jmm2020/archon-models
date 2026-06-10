@@ -1,0 +1,563 @@
+{
+  "classify-issue": {
+    "output_type": "json",
+    "n_train": 195,
+    "templatable": false,
+    "invariant_chars": 28,
+    "invariant_frac": 0.064,
+    "variable_chars": 411,
+    "scenario_slot": null,
+    "schema": {
+      "required_keys": [
+        "issue_type",
+        "reasoning",
+        "title"
+      ],
+      "enums": {
+        "issue_type": [
+          "bug"
+        ]
+      }
+    },
+    "baseline_template": "promptlab/prompts/classify-issue/baseline_template.txt"
+  },
+  "code-review": {
+    "output_type": "markdown",
+    "n_train": 195,
+    "templatable": false,
+    "invariant_chars": 41,
+    "invariant_frac": 0.046,
+    "variable_chars": 841,
+    "scenario_slot": null,
+    "schema": null,
+    "baseline_template": "promptlab/prompts/code-review/baseline_template.txt"
+  },
+  "comment-quality-review": {
+    "output_type": "markdown",
+    "n_train": 195,
+    "templatable": false,
+    "invariant_chars": 35,
+    "invariant_frac": 0.064,
+    "variable_chars": 513,
+    "scenario_slot": null,
+    "schema": null,
+    "baseline_template": "promptlab/prompts/comment-quality-review/baseline_template.txt"
+  },
+  "create-plan": {
+    "output_type": "markdown",
+    "n_train": 195,
+    "templatable": false,
+    "invariant_chars": 35,
+    "invariant_frac": 0.041,
+    "variable_chars": 820,
+    "scenario_slot": null,
+    "schema": null,
+    "baseline_template": "promptlab/prompts/create-plan/baseline_template.txt"
+  },
+  "docs-impact-review": {
+    "output_type": "markdown",
+    "n_train": 195,
+    "templatable": false,
+    "invariant_chars": 48,
+    "invariant_frac": 0.074,
+    "variable_chars": 602,
+    "scenario_slot": null,
+    "schema": null,
+    "baseline_template": "promptlab/prompts/docs-impact-review/baseline_template.txt"
+  },
+  "error-handling-review": {
+    "output_type": "markdown",
+    "n_train": 195,
+    "templatable": false,
+    "invariant_chars": 9,
+    "invariant_frac": 0.012,
+    "variable_chars": 725,
+    "scenario_slot": null,
+    "schema": null,
+    "baseline_template": "promptlab/prompts/error-handling-review/baseline_template.txt"
+  },
+  "escalation": {
+    "output_type": "json",
+    "n_train": 47,
+    "templatable": false,
+    "invariant_chars": 14,
+    "invariant_frac": 0.032,
+    "variable_chars": 417,
+    "scenario_slot": null,
+    "schema": {
+      "required_keys": [
+        "confidence",
+        "escalate",
+        "workflow"
+      ],
+      "enums": {
+        "workflow": [],
+        "confidence": [
+          "low"
+        ]
+      }
+    },
+    "baseline_template": "promptlab/prompts/escalation/baseline_template.txt"
+  },
+  "fix-issue": {
+    "output_type": "markdown",
+    "n_train": 195,
+    "templatable": false,
+    "invariant_chars": 29,
+    "invariant_frac": 0.053,
+    "variable_chars": 518,
+    "scenario_slot": null,
+    "schema": null,
+    "baseline_template": "promptlab/prompts/fix-issue/baseline_template.txt"
+  },
+  "implement-tasks": {
+    "output_type": "markdown",
+    "n_train": 196,
+    "templatable": false,
+    "invariant_chars": 35,
+    "invariant_frac": 0.051,
+    "variable_chars": 645,
+    "scenario_slot": null,
+    "schema": null,
+    "baseline_template": "promptlab/prompts/implement-tasks/baseline_template.txt"
+  },
+  "investigate-issue": {
+    "output_type": "markdown",
+    "n_train": 195,
+    "templatable": false,
+    "invariant_chars": 39,
+    "invariant_frac": 0.066,
+    "variable_chars": 556,
+    "scenario_slot": null,
+    "schema": null,
+    "baseline_template": "promptlab/prompts/investigate-issue/baseline_template.txt"
+  },
+  "memory": {
+    "output_type": "markdown",
+    "n_train": 38,
+    "templatable": false,
+    "invariant_chars": 15,
+    "invariant_frac": 0.096,
+    "variable_chars": 142,
+    "scenario_slot": null,
+    "schema": null,
+    "baseline_template": "promptlab/prompts/memory/baseline_template.txt"
+  },
+  "routing": {
+    "output_type": "json",
+    "n_train": 57,
+    "templatable": false,
+    "invariant_chars": 20,
+    "invariant_frac": 0.103,
+    "variable_chars": 174,
+    "scenario_slot": null,
+    "schema": {
+      "required_keys": [
+        "confidence",
+        "escalate",
+        "workflow"
+      ],
+      "enums": {
+        "confidence": [
+          "high",
+          "med"
+        ]
+      }
+    },
+    "baseline_template": "promptlab/prompts/routing/baseline_template.txt"
+  },
+  "self-fix-all": {
+    "output_type": "markdown",
+    "n_train": 195,
+    "templatable": false,
+    "invariant_chars": 43,
+    "invariant_frac": 0.065,
+    "variable_chars": 616,
+    "scenario_slot": null,
+    "schema": null,
+    "baseline_template": "promptlab/prompts/self-fix-all/baseline_template.txt"
+  },
+  "simplify-changes": {
+    "output_type": "markdown",
+    "n_train": 195,
+    "templatable": false,
+    "invariant_chars": 56,
+    "invariant_frac": 0.091,
+    "variable_chars": 562,
+    "scenario_slot": null,
+    "schema": null,
+    "baseline_template": "promptlab/prompts/simplify-changes/baseline_template.txt"
+  },
+  "structured-output": {
+    "output_type": "json",
+    "n_train": 47,
+    "templatable": false,
+    "invariant_chars": 34,
+    "invariant_frac": 0.155,
+    "variable_chars": 185,
+    "scenario_slot": null,
+    "schema": {
+      "required_keys": [
+        "acceptance_criteria",
+        "action",
+        "added_columns",
+        "adr_number",
+        "affected_package_versions",
+        "affected_services",
+        "alternatives_considered",
+        "anomalies",
+        "anomaly_count",
+        "assignee_hint",
+        "audit_passed",
+        "auto_merge_eligible",
+        "blocking_gates",
+        "blocking_issues",
+        "blocking_signals",
+        "breakdown",
+        "breaking",
+        "breaking_change",
+        "breaking_changes",
+        "category",
+        "coercible",
+        "complexity",
+        "confidence",
+        "consequences",
+        "context",
+        "cpu_limit",
+        "cpu_request",
+        "critical_count",
+        "critical_path",
+        "current_version",
+        "cve_id",
+        "cvss_score",
+        "decision",
+        "default_value",
+        "dependencies",
+        "drift_detected",
+        "endpoint",
+        "endpoint_count",
+        "entry",
+        "environment",
+        "environments",
+        "error_count",
+        "errors",
+        "escalate_to_management",
+        "estimated_downtime_minutes",
+        "estimated_downtime_seconds",
+        "estimated_improvement",
+        "estimated_output_tokens",
+        "estimated_review_hours",
+        "estimated_total_effort_days",
+        "estimated_user_impact",
+        "execution_order",
+        "exploitable_remotely",
+        "failed_tests",
+        "failing_tests",
+        "fix",
+        "fix_priority",
+        "flag_name",
+        "flag_type",
+        "format",
+        "gate_checks",
+        "gate_results",
+        "has_cycles",
+        "high_count",
+        "highest_severity",
+        "hpa_metric",
+        "immediate_actions",
+        "impacted_services",
+        "incident_id",
+        "insecure",
+        "insecure_values",
+        "intent",
+        "invalid_format",
+        "is_breaking",
+        "is_conventional",
+        "is_infrastructure_issue",
+        "issues_referenced",
+        "justification",
+        "meets_threshold",
+        "memory_limit",
+        "memory_request",
+        "method",
+        "migration_type",
+        "missing",
+        "missing_required",
+        "most_likely_file",
+        "on_call_action",
+        "on_call_team",
+        "openapi_version",
+        "overall_coverage",
+        "overall_quality",
+        "overall_risk",
+        "overall_score",
+        "package",
+        "packages_at_risk",
+        "parallelizable_groups",
+        "pass_rate",
+        "passes_gate",
+        "patch_available",
+        "path",
+        "path_params",
+        "prioritized",
+        "problem_type",
+        "proposed_version",
+        "publish_blocked",
+        "query_id",
+        "query_params",
+        "ready",
+        "reason",
+        "recommendation",
+        "recommended_action",
+        "recommended_model_tier",
+        "refactor_recommended",
+        "release_date",
+        "release_recommendation",
+        "removed_columns",
+        "replicas_max",
+        "replicas_min",
+        "request_body",
+        "request_body_schema",
+        "required_actions",
+        "requires_context_window",
+        "requires_maintenance_window",
+        "response_body",
+        "response_codes",
+        "risk_factors",
+        "risk_level",
+        "risks",
+        "rollback_feasible",
+        "rollout_strategy",
+        "root_cause_category",
+        "runbook_url",
+        "scope",
+        "score",
+        "sections",
+        "sensitive_data_present",
+        "severity",
+        "severity_level",
+        "should_trigger_release",
+        "smells",
+        "status",
+        "status_codes",
+        "steps",
+        "story_points",
+        "subject",
+        "suggested_labels",
+        "suggested_message",
+        "summary",
+        "ticket_refs",
+        "title",
+        "top_item_id",
+        "top_priority_fix",
+        "total_hours",
+        "type",
+        "type_changes",
+        "uncovered_modules",
+        "unresolvable_nodes",
+        "unused",
+        "unused_vars",
+        "upgrade_priority",
+        "upgrade_required",
+        "valid",
+        "verdict",
+        "version",
+        "version_bump",
+        "violations",
+        "warnings",
+        "wcag_level_achieved"
+      ],
+      "enums": {
+        "decision": [
+          "proceed",
+          "request_changes"
+        ],
+        "upgrade_priority": [
+          "immediate"
+        ],
+        "method": [
+          "PATCH",
+          "POST"
+        ],
+        "migration_type": [
+          "transform"
+        ],
+        "incident_id": [
+          "INC-20260608-031400",
+          "INC-20260608-1422"
+        ],
+        "category": [
+          "availability"
+        ],
+        "on_call_action": [
+          "page_immediately"
+        ],
+        "runbook_url": [],
+        "flag_name": [
+          "checkout_flow_v2"
+        ],
+        "flag_type": [
+          "percentage_rollout"
+        ],
+        "complexity": [
+          "complex"
+        ],
+        "status": [
+          "accepted",
+          "errors"
+        ],
+        "version_bump": [
+          "major"
+        ],
+        "cpu_request": [
+          "700m"
+        ],
+        "cpu_limit": [
+          "2000m"
+        ],
+        "memory_request": [
+          "512Mi"
+        ],
+        "memory_limit": [
+          "896Mi"
+        ],
+        "wcag_level_achieved": [
+          "none"
+        ],
+        "query_id": [
+          "q_8831"
+        ],
+        "problem_type": [
+          "missing_index"
+        ],
+        "release_recommendation": [
+          "no_go"
+        ],
+        "highest_severity": [
+          "FATAL"
+        ],
+        "top_item_id": [
+          "TD-002"
+        ],
+        "format": [
+          "non-conventional"
+        ],
+        "type": [
+          "feat",
+          "story"
+        ],
+        "scope": [
+          "auth",
+          "payments"
+        ],
+        "root_cause_category": [
+          "environment",
+          "import_error"
+        ],
+        "fix_priority": [
+          "immediate"
+        ],
+        "overall_risk": [
+          "high"
+        ],
+        "on_call_team": [
+          "infra"
+        ],
+        "estimated_user_impact": [
+          "total"
+        ],
+        "openapi_version": [
+          "3.0.1"
+        ],
+        "environment": [
+          "production"
+        ],
+        "version": [
+          "2.4.0"
+        ],
+        "release_date": [
+          "2026-06-08"
+        ],
+        "cve_id": [
+          "CVE-2026-8821"
+        ],
+        "severity": [
+          "critical"
+        ],
+        "recommended_action": [
+          "patch_immediately"
+        ],
+        "intent": [
+          "code_review"
+        ],
+        "requires_context_window": [
+          "very_large"
+        ],
+        "recommended_model_tier": [
+          "powerful"
+        ],
+        "verdict": [
+          "request_changes"
+        ],
+        "package": [
+          "express"
+        ],
+        "current_version": [
+          "4.18.2"
+        ],
+        "proposed_version": [
+          "5.0.0"
+        ],
+        "risk_level": [
+          "high"
+        ],
+        "action": [
+          "block"
+        ],
+        "most_likely_file": [
+          "src/utils/crypto.ts"
+        ],
+        "overall_quality": [
+          "critical"
+        ],
+        "assignee_hint": [
+          "front-end"
+        ]
+      }
+    },
+    "baseline_template": "promptlab/prompts/structured-output/baseline_template.txt"
+  },
+  "synthesize-review": {
+    "output_type": "markdown",
+    "n_train": 195,
+    "templatable": false,
+    "invariant_chars": 82,
+    "invariant_frac": 0.117,
+    "variable_chars": 617,
+    "scenario_slot": null,
+    "schema": null,
+    "baseline_template": "promptlab/prompts/synthesize-review/baseline_template.txt"
+  },
+  "test-coverage-review": {
+    "output_type": "markdown",
+    "n_train": 195,
+    "templatable": false,
+    "invariant_chars": 31,
+    "invariant_frac": 0.053,
+    "variable_chars": 551,
+    "scenario_slot": null,
+    "schema": null,
+    "baseline_template": "promptlab/prompts/test-coverage-review/baseline_template.txt"
+  },
+  "validate": {
+    "output_type": "markdown",
+    "n_train": 195,
+    "templatable": false,
+    "invariant_chars": 34,
+    "invariant_frac": 0.049,
+    "variable_chars": 667,
+    "scenario_slot": null,
+    "schema": null,
+    "baseline_template": "promptlab/prompts/validate/baseline_template.txt"
+  }
+}

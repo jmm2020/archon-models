@@ -1,0 +1,96 @@
+{
+  "threshold": 5,
+  "skipped": 0,
+  "roles": {
+    "classify-issue": {
+      "n": 11,
+      "low_confidence": false,
+      "file": "promptlab/eval/classify-issue.jsonl"
+    },
+    "code-review": {
+      "n": 11,
+      "low_confidence": false,
+      "file": "promptlab/eval/code-review.jsonl"
+    },
+    "comment-quality-review": {
+      "n": 11,
+      "low_confidence": false,
+      "file": "promptlab/eval/comment-quality-review.jsonl"
+    },
+    "create-plan": {
+      "n": 11,
+      "low_confidence": false,
+      "file": "promptlab/eval/create-plan.jsonl"
+    },
+    "docs-impact-review": {
+      "n": 11,
+      "low_confidence": false,
+      "file": "promptlab/eval/docs-impact-review.jsonl"
+    },
+    "error-handling-review": {
+      "n": 11,
+      "low_confidence": false,
+      "file": "promptlab/eval/error-handling-review.jsonl"
+    },
+    "escalation": {
+      "n": 3,
+      "low_confidence": true,
+      "file": "promptlab/eval/escalation.jsonl"
+    },
+    "fix-issue": {
+      "n": 11,
+      "low_confidence": false,
+      "file": "promptlab/eval/fix-issue.jsonl"
+    },
+    "implement-tasks": {
+      "n": 11,
+      "low_confidence": false,
+      "file": "promptlab/eval/implement-tasks.jsonl"
+    },
+    "investigate-issue": {
+      "n": 11,
+      "low_confidence": false,
+      "file": "promptlab/eval/investigate-issue.jsonl"
+    },
+    "memory": {
+      "n": 2,
+      "low_confidence": true,
+      "file": "promptlab/eval/memory.jsonl"
+    },
+    "routing": {
+      "n": 3,
+      "low_confidence": true,
+      "file": "promptlab/eval/routing.jsonl"
+    },
+    "self-fix-all": {
+      "n": 11,
+      "low_confidence": false,
+      "file": "promptlab/eval/self-fix-all.jsonl"
+    },
+    "simplify-changes": {
+      "n": 11,
+      "low_confidence": false,
+      "file": "promptlab/eval/simplify-changes.jsonl"
+    },
+    "structured-output": {
+      "n": 3,
+      "low_confidence": true,
+      "file": "promptlab/eval/structured-output.jsonl"
+    },
+    "synthesize-review": {
+      "n": 11,
+      "low_confidence": false,
+      "file": "promptlab/eval/synthesize-review.jsonl"
+    },
+    "test-coverage-review": {
+      "n": 11,
+      "low_confidence": false,
+      "file": "promptlab/eval/test-coverage-review.jsonl"
+    },
+    "validate": {
+      "n": 11,
+      "low_confidence": false,
+      "file": "promptlab/eval/validate.jsonl"
+    }
+  }
+}
