@@ -1,0 +1,16 @@
+{
+  "template": "You are an issue classifier for {{SCENARIO_CONTEXT}}",
+  "records": [
+    {"idx": 0, "scenario_context": "invoicely-saas."},
+    {"idx": 1, "scenario_context": "the wayfarer-collab-api project."},
+    {"idx": 2, "scenario_context": "tapecast-feed."},
+    {"idx": 3, "scenario_context": "the academytrack-lms-mobile repository."},
+    {"idx": 4, "scenario_context": "venueops-ticketing."},
+    {"idx": 5, "scenario_context": "the formvault project."},
+    {"idx": 6, "scenario_context": "the docpod-unified repo."},
+    {"idx": 7, "scenario_context": "podscout-analytics."},
+    {"idx": 8, "scenario_context": "eventpass-mobile-api."},
+    {"idx": 9, "scenario_context": "the fleet-dispatch-service repository."},
+    {"idx": 10, "scenario_context": "the gympass-access repo."}
+  ]
+}

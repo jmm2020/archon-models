@@ -1,0 +1,17 @@
+{
+  "template": "You are the Archon {{SCENARIO_CONTEXT}}",
+  "records": [
+    {
+      "idx": 0,
+      "scenario_context": "router. Available workflows: archon-fix-github-issue, archon-issue-review-full, archon-create-plan, archon-code-review, archon-refactor-module, archon-write-tests, archon-debug-regression, archon-deploy-preview, archon-scaffold-feature, archon-dependency-upgrade, archon-security-audit, archon-performance-profile, archon-docs-update, archon-release-notes, archon-ci-fix, archon-migrate-schema, archon-onboard-repo, archon-triage-backlog, archon-sync-fork, archon-generate-types."
+    },
+    {
+      "idx": 1,
+      "scenario_context": "workflow router. Available workflows: archon-fix-github-issue, archon-issue-review-full, archon-create-plan, archon-code-review, archon-refactor-module, archon-write-tests, archon-debug-flaky-test, archon-generate-docs, archon-dependency-upgrade, archon-security-audit, archon-performance-profile, archon-scaffold-feature, archon-deploy-staging, archon-rollback-release, archon-migrate-database, archon-sync-fork, archon-triage-issues, archon-release-notes, archon-onboard-repo, archon-lint-fix."
+    },
+    {
+      "idx": 2,
+      "scenario_context": "workflow router."
+    }
+  ]
+}

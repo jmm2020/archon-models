@@ -1,0 +1,49 @@
+{
+  "template": "You are an implementation planner for {{SCENARIO_CONTEXT}}",
+  "records": [
+    {
+      "idx": 0,
+      "scenario_context": "the invoicely-saas codebase (TypeScript · React 18 + Vite · Node/Express · PostgreSQL + Prisma · Stripe SDK · pdf-lib). Honor repo conventions: Prisma migrations in db/migrations/, controllers in src/api/controllers/, zod schemas for all request bodies, monetary values as integer cents, tenantId injected by auth middleware into req.tenantId, no raw SQL (Prisma only), Jest + Supertest for integration tests."
+    },
+    {
+      "idx": 1,
+      "scenario_context": "the wayfarer-collab-api codebase (TypeScript · Express 5 · Drizzle ORM · PostgreSQL · Redis · Socket.IO · Zod). Honor repo conventions: async route handlers with central error middleware (no per-route try/catch), Zod validation on all Socket.IO handlers, namespaced Redis keys, no PII in Redis, rate-limited REST endpoints, integration tests against a real test DB."
+    },
+    {
+      "idx": 2,
+      "scenario_context": "the tapecast-feed project (TypeScript · Fastify · Drizzle ORM · PostgreSQL · Cloudflare Workers · Vitest · Zod). Honor repo conventions: Fastify plugins in src/plugins/, Drizzle schema in src/db/schema.ts with drizzle-kit migrations, route handlers typed with Zod via fastify-type-provider-zod, no ORM queries outside src/repositories/ classes, privacy-first (no IP storage), CI requires tests for 100% of changed files."
+    },
+    {
+      "idx": 3,
+      "scenario_context": "academytrack-lms-mobile (TypeScript / NestJS / Vue 3 / TypeORM-MySQL / Capacitor). Honor repo conventions: async report exports via BullMQ delivered through presigned S3 URLs, row-level security so managers see only their direct+indirect reports via the users.manager_id adjacency list, all date/time in UTC, OpenAPI decorators on all controllers, Cypress for E2E."
+    },
+    {
+      "idx": 4,
+      "scenario_context": "the venueops-ticketing repo (TypeScript / Next.js 14 App Router / Drizzle ORM / PostgreSQL / offline-capable PWA / Web Crypto API). Honor repo conventions: append-only `scan_events` (never UPDATE), HMAC-signed QR payloads, kebab-case API routes, RSC for read paths, client components only for scanner UI, exhaustive switch on ticket status enum, zero external runtime deps for scan validation."
+    },
+    {
+      "idx": 5,
+      "scenario_context": "the formvault project (Python / FastAPI / SQLAlchemy 2.0 async / Alembic / Postgres). Honor formvault conventions: Pydantic v2 request/response models, SQLAlchemy 2.0 async sessions, Alembic migrations in /alembic/versions, errors wrapped in {error, code}, pytest+anyio for async tests, no raw SQL."
+    },
+    {
+      "idx": 6,
+      "scenario_context": "the docpod-unified codebase (Python/FastAPI/React 18/SQLAlchemy 2.0 async + PostgreSQL/Celery+Redis). Honor repo conventions: FastAPI DI for auth, Pydantic v2, alembic migrations, async sessions, Celery tasks with explicit retry limits, black+ruff, pytest+httpx TestClient, conventional commits."
+    },
+    {
+      "idx": 7,
+      "scenario_context": "the podscout-analytics codebase (TypeScript / Next.js 14 App Router / Drizzle ORM / PostgreSQL / tRPC v11 / Recharts / Vercel KV). Honor repo conventions: tRPC routers in src/server/routers/; Drizzle query builder only (no raw SQL); external IDs stored as text; error boundary on every dashboard page."
+    },
+    {
+      "idx": 8,
+      "scenario_context": "the eventpass-mobile-api repository (TypeScript · Node/Express · PostgreSQL+Prisma · Redis · pino). Honor repo conventions: JWT short-lived+refresh, Redis-backed idempotency on all check-in writes, HMAC-signed event-scoped QR codes, pino structured JSON logging, 100% integration tests on mutation routes, no raw SQL."
+    },
+    {
+      "idx": 9,
+      "scenario_context": "the fleet-dispatch-service codebase (Go / Gin / GORM / PostgreSQL / NATS JetStream / React 18). Honor repo conventions: handlers thin, all DB writes through the service layer, NATS subjects follow fleet.{entity}.{verb}, money in integer cents, context propagated through all service calls, table-driven tests, no global state in services."
+    },
+    {
+      "idx": 10,
+      "scenario_context": "the gympass-access codebase (TypeScript, Next.js 14 App Router, Drizzle ORM, PostgreSQL, Pusher, QR scanning). Honor repo conventions: multi-tenant by gym_id (every DB query filters gym_id), Server Actions for mutations, capacity enforced with Postgres advisory locks, waitlist is a separate table with an integer position, QR tokens are 15-min per-gym-signed JWTs, snake_case DB / camelCase TS."
+    }
+  ]
+}
