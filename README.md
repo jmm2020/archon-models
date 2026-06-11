@@ -1,10 +1,11 @@
 # archon-models
 
-A small, focused **workflow router** for [Archon](https://github.com/coleam00/Archon) — the open-source harness builder for AI coding agents.
+Local specialist models for [Archon](https://github.com/coleam00/Archon) — the open-source harness builder for AI coding agents. LoRA adapters fine-tuned on `unsloth/gemma-4-12b`, trained locally with Unsloth + TRL. Two lanes:
 
-Given a natural-language user request, the router picks the single best Archon **workflow** to run (or abstains and escalates when nothing fits). It is a **LoRA adapter** fine-tuned on `unsloth/gemma-4-12b`, trained locally with Unsloth + TRL.
+1. **v1 — the router**: natural-language request → the single best Archon **workflow** (or abstain + escalate). Small, focused, JSON-out.
+2. **v2 — the execution model** *(new)*: the model produces the Archon **artifacts themselves** — implementation plans, issue investigations, code reviews, classifications — across **18 roles**, the way the frontier teacher does, but locally. **[Read the v2 training write-up →](docs/V2_TRAINING.md)**
 
-> **Status: v0.1 → working toward v0.1.1.** The training pipeline runs end-to-end on a single GPU and the adapter trains cleanly — but v0.1 learns from a small set of canonical examples (each workflow's own description), so it mostly measures memorization, not routing skill. **v0.1.1 is about fixing that with real, diverse, human-written data — and that's where you come in.** See [**How you can help**](#how-you-can-help-build-v011) below.
+> **Status:** router v0.1 → v0.1.1 (data drive below). **Execution model v2: trained 2026-06-10** (held-out eval_loss 0.698 → 0.631 over 3 epochs, no overfit); per-role evaluation via [PromptLab](promptlab/DESIGN.md) is in progress — see **[docs/TESTING.md](docs/TESTING.md)** for results and **[reports/](reports/)** to contribute your own testing data.
 
 ---
 
