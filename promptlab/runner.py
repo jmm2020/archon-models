@@ -72,14 +72,19 @@ def main():
     print(f"[runner] loading {args.model} (4-bit){'' if args.base_only else ' + adapter'} ...", flush=True)
     from unsloth import FastModel
     from unsloth.chat_templates import get_chat_template
-    model, tokenizer = FastModel.from_pretrained(
-        model_name=args.model, max_seq_length=args.max_seq, load_in_4bit=True, dtype=None,
-    )
-    if not args.base_only:
+    # Load the adapter dir directly (Unsloth resolves base from adapter_config);
+    # transformers' model.load_adapter() integration breaks on peft version skew.
+    if args.base_only:
+        load_from = args.model
+    else:
         adp = Path(args.adapter)
         if not adp.exists():
             raise SystemExit(f"adapter not found: {adp} (training not finished? use --base-only)")
-        model.load_adapter(str(adp))
+        load_from = str(adp)
+    model, tokenizer = FastModel.from_pretrained(
+        model_name=load_from, max_seq_length=args.max_seq, load_in_4bit=True, dtype=None,
+    )
+    if not args.base_only:
         print(f"[runner] loaded adapter {adp}", flush=True)
     tokenizer = get_chat_template(tokenizer, chat_template="gemma-4")
     FastModel.for_inference(model)
