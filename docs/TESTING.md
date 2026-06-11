@@ -54,11 +54,24 @@ CUDA_VISIBLE_DEVICES=0 python promptlab/runner.py --jobs promptlab/jobs.jsonl --
 
 ## Results
 
-### Subset proof (create-plan · classify-issue · routing)
+### Subset proof (create-plan · classify-issue · routing) — 2026-06-11
 
-> **Status: generation run in progress.** The leaderboard will be committed to
-> `promptlab/runs/promptlab_subset_v2/report.md` and summarized here when it
-> completes.
+Run `subset_v2_gguf`: 100 generations (25 records × baseline + 3 candidates),
+v2 q8_0 GGUF via llama-server, temp 0, 16.6s/gen avg on one RTX 3090.
+**Deterministic tier** (frontier judge for create-plan prose quality pending):
+
+| Role | baseline | best candidate | Δ | n |
+|---|---|---|---|---|
+| classify-issue | **1.000** | 1.000 (all three) | 0.0 | 11 |
+| create-plan (gate) | **0.951** | 0.944 (`v1_phase_contract_explicit`) | −0.007 | 11 |
+| routing ⚠️ thin | **0.767** | 0.650 (`v1`/`v3`) | −0.117 | 3 |
+
+**Headline finding: the trained baseline prompt won all three roles.** The
+fine-tuned model is anchored to its training-prompt distribution — every
+"improved" candidate scored equal or worse. Practical guidance: **deploy the
+training prompts verbatim**; invest prompt-engineering effort in the corpus,
+not at inference time. (classify-issue went 11/11 on every variant — the model
+is robust on that task regardless of prompt wording.)
 
 The subset proves the methodology on one markdown role + two JSON roles before
 we scale to all 18. routing is flagged **low-confidence** (only 3 eval records)
